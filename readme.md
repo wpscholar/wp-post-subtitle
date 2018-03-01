@@ -1,6 +1,6 @@
 # Post Subtitle
 
-Adds a subtitle field below the post title field in WordPress.
+A module that adds a subtitle field below the post title field in WordPress.
 
 ## Requirements
 
@@ -11,15 +11,13 @@ Adds a subtitle field below the post title field in WordPress.
 
 1. Add the module to your project via [Composer](https://getcomposer.org/):
 
-```php
+```shell
 composer require wpscholar/wp-post-subtitle
 ```
 
 2. Make sure you have added the Composer autoloader to your project:
 
 ```php
-<?php
-
 require __DIR__ . '/vendor/autoload.php';
 ```
 
@@ -30,8 +28,6 @@ The subtitle feature is activated by adding post type support.
 If you are adding support to a pre-existing post type, just add this code:
 
 ```php
-<?php
-
 add_post_type_support( 'post', 'subtitle' );
 ```
 
@@ -41,7 +37,7 @@ Or, in the `supports` argument when registering a post type, just add `subtitle`
 
 ## Available Methods
 
-The following static methods are publicly available:
+The following static methods are publicly available (under the `wpscholar\Wordpress\PostSubtitle` namespace):
 
 - `getSubtitle( $post_id )` - Get the subtitle for a specific post.
 - `setSubtitle( $post_id, $value )` - Set the subtitle for a specific post. 
@@ -51,7 +47,5 @@ The following static methods are publicly available:
 If you are adding the code to a WordPress plugin or theme, there is no initialization step required. However, if you are adding the code at a higher level in your WordPress project you will need to call the initialization function on the `after_setup_theme` hook, like so:
 
 ```php
-<?php
-
 add_action( 'after_setup_theme', '\wpscholar\WordPress\PostSubtitle::initialize' );
 ```
