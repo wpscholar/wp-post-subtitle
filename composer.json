@@ -13,7 +13,7 @@
       "bootstrap.php"
     ],
     "psr-4": {
-      "wpscholar\\WordPress\\PostSubtitle\\": ""
+      "wpscholar\\WordPress\\": ""
     }
   }
 }
